@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="srsp4" name="Схема верхнего уровня">
+    <mxGraphModel dx="800" dy="1300" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1400" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" value="Начало" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="280" y="20" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="init" value="count = 0&lt;br&gt;sum = 0&lt;br&gt;fives = 0" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="100" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="read1" value="g = Grades.Read()" style="shape=process;size=0.06;backgroundOutline=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="200" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="g ≠ Stop ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="310" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="valid" value="ok = Grades.IsValid(g)" style="shape=process;size=0.06;backgroundOutline=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="430" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="ok ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="520" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="add" value="count = count + 1&lt;br&gt;sum = sum + g" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="640" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="g = Max ?" style="rhombus;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="740" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="five" value="fives = fives + 1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="860" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="read2" value="g = Grades.Read()" style="shape=process;size=0.06;backgroundOutline=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="250" y="990" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="print" value="Grades.PrintStats(count, sum, fives)" style="shape=process;size=0.05;backgroundOutline=1;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="220" y="1120" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="end" value="Конец" style="rounded=1;arcSize=50;whiteSpace=wrap;html=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="280" y="1210" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;" edge="1" parent="1" source="start" target="init">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;" edge="1" parent="1" source="init" target="read1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;" edge="1" parent="1" source="read1" target="d1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="да" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;fontSize=13;labelBackgroundColor=#ffffff;align=left;spacingLeft=6;" edge="1" parent="1" source="d1" target="valid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;" edge="1" parent="1" source="valid" target="d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" value="да" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;fontSize=13;labelBackgroundColor=#ffffff;align=left;spacingLeft=6;" edge="1" parent="1" source="d2" target="add">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;" edge="1" parent="1" source="add" target="d3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" value="да" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;fontSize=13;labelBackgroundColor=#ffffff;align=left;spacingLeft=6;" edge="1" parent="1" source="d3" target="five">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;" edge="1" parent="1" source="five" target="read2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" value="нет" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=13;verticalAlign=bottom;spacingBottom=2;labelBackgroundColor=none;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="d3" target="read2">
+          <mxGeometry x="-0.9" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="520" y="780" />
+              <mxPoint x="520" y="950" />
+              <mxPoint x="360" y="950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" value="нет" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=13;verticalAlign=bottom;spacingBottom=2;labelBackgroundColor=none;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="d2" target="read2">
+          <mxGeometry x="-0.9" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="560" />
+              <mxPoint x="560" y="950" />
+              <mxPoint x="360" y="950" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="read2" target="d1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="1070" />
+              <mxPoint x="200" y="1070" />
+              <mxPoint x="200" y="280" />
+              <mxPoint x="360" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e13" value="нет" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=13;verticalAlign=bottom;spacingBottom=2;labelBackgroundColor=none;exitX=1;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="d1" target="print">
+          <mxGeometry x="-0.9" relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="620" y="350" />
+              <mxPoint x="620" y="1100" />
+              <mxPoint x="360" y="1100" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=none;" edge="1" parent="1" source="print" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
